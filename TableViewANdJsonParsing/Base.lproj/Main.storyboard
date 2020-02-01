@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3wO-6z-zWJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TableViewANdJsonParsing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-aQ-dmn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                            <searchBar contentMode="redraw" text="" id="VeZ-xD-tCk">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.58823529411764708" green="0.19607843137254902" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JX7-b1-VMC">
+                                <rect key="frame" x="0.0" y="132" width="414" height="730"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiseaseTableViewCell" rowHeight="342" id="a4K-dG-BwR" customClass="DiseaseTableViewCell" customModule="TableViewANdJsonParsing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="342"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a4K-dG-BwR" id="s0V-0D-ISH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="342"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Diseases" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-ed-Jei">
+                                                    <rect key="frame" x="30" y="21" width="290" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LD5-9g-dle" customClass="CheckBox" customModule="TableViewANdJsonParsing" customModuleProvider="target">
+                                                    <rect key="frame" x="352" y="21" width="32" height="32"/>
+                                                    <state key="normal" image="Checkmark"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="tEA-ed-Jei" firstAttribute="leading" secondItem="s0V-0D-ISH" secondAttribute="leadingMargin" constant="10" id="G3S-8v-Iw8"/>
+                                                <constraint firstItem="LD5-9g-dle" firstAttribute="top" secondItem="s0V-0D-ISH" secondAttribute="topMargin" constant="10" id="Mw6-ja-Rlo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LD5-9g-dle" secondAttribute="trailing" constant="10" id="O0O-K9-JDT"/>
+                                                <constraint firstItem="LD5-9g-dle" firstAttribute="centerY" secondItem="tEA-ed-Jei" secondAttribute="centerY" id="Qoa-eH-mAy"/>
+                                                <constraint firstItem="tEA-ed-Jei" firstAttribute="top" secondItem="s0V-0D-ISH" secondAttribute="topMargin" constant="10" id="db1-8a-Tvm"/>
+                                                <constraint firstItem="tEA-ed-Jei" firstAttribute="width" secondItem="s0V-0D-ISH" secondAttribute="width" multiplier="0.7" id="rAO-ve-FFb"/>
+                                                <constraint firstItem="LD5-9g-dle" firstAttribute="height" secondItem="tEA-ed-Jei" secondAttribute="height" id="uFu-TN-WfO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="checkBox" destination="LD5-9g-dle" id="lJ0-i3-sAy"/>
+                                            <outlet property="diseasesTextField" destination="tEA-ed-Jei" id="nMS-GA-dm3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JX7-b1-VMC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6sW-Su-0bi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fQQ-aQ-dmn" secondAttribute="trailing" id="KuC-aE-O17"/>
+                            <constraint firstItem="fQQ-aQ-dmn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UGl-S2-wPd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fQQ-aQ-dmn" secondAttribute="bottom" id="W27-fo-F23"/>
+                            <constraint firstItem="fQQ-aQ-dmn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zer-Vk-FMV"/>
+                            <constraint firstItem="JX7-b1-VMC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dJj-r0-Glc"/>
+                            <constraint firstItem="JX7-b1-VMC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fto-bY-oII"/>
+                            <constraint firstItem="JX7-b1-VMC" firstAttribute="top" secondItem="VeZ-xD-tCk" secondAttribute="bottom" id="pXK-U2-gaj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fFE-92-kru"/>
+                    <connections>
+                        <outlet property="diseaseTableView" destination="JX7-b1-VMC" id="Zyw-Fb-1zV"/>
+                        <outlet property="searchBar" destination="VeZ-xD-tCk" id="L4s-5d-EcN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837.68115942028987" y="119.86607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LsV-QL-Qac">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3wO-6z-zWJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bKd-vZ-8jW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="F5D-8a-BQi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCG-en-4Re" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="119.86607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="1000" height="2000"/>
+        <image name="Checkmark" width="32" height="32"/>
+    </resources>
+</document>
