@@ -26,11 +26,11 @@ class CheckBox: UIButton {
     }
     
     override func awakeFromNib() {
-        self.addTarget(self, action: "buttonClicked", for: UIControl.Event.touchUpInside)
+        self.addTarget(self, action: #selector(buttonClicked), for: UIControl.Event.touchUpInside)
         self.isChecked = false
     }
     
-    func buttonClicked(sender:UIButton) {
+    @objc func buttonClicked(sender:UIButton) {
         if (sender == self) {
             if isChecked == true {
                 isChecked = false

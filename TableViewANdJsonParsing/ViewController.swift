@@ -42,9 +42,11 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             cell.diseasesTextField.text = searchDisease[indexPath.row]
         } else {
             cell.diseasesTextField.text = userDisease[indexPath.row].disease
+        
+        return cell
+            
         }
-            return cell
-        }
+    }
     
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 60.0
@@ -57,9 +59,9 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             if error == nil {
                 do {
                 let abc = try JSONDecoder().decode([Disease].self, from: data!)
-                    //self.diseaseTableView.reloadData()
+                    self.diseaseTableView.reloadData()
                 for diseses in abc{
-                   // print(diseses.disease)
+                    print(diseses.disease)
                     self.userDisease.append(diseses)
                 }
                     DispatchQueue.main.async {
@@ -73,11 +75,12 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     }
     
     // User input text
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // alphabetically search Disease
         searchDisease = userDisease.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
         SearchingDieases = true
         diseaseTableView.reloadData()
+        }
     }
-}
+

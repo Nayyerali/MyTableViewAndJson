@@ -29,11 +29,11 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiseaseTableViewCell" rowHeight="342" id="a4K-dG-BwR" customClass="DiseaseTableViewCell" customModule="TableViewANdJsonParsing" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="342"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiseaseTableViewCell" rowHeight="296" id="a4K-dG-BwR" customClass="DiseaseTableViewCell" customModule="TableViewANdJsonParsing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a4K-dG-BwR" id="s0V-0D-ISH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="342"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="296"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Diseases" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-ed-Jei">
@@ -43,7 +43,7 @@
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LD5-9g-dle" customClass="CheckBox" customModule="TableViewANdJsonParsing" customModuleProvider="target">
                                                     <rect key="frame" x="352" y="21" width="32" height="32"/>
-                                                    <state key="normal" image="Checkmark"/>
+                                                    <state key="normal" image="Circle"/>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,6 +110,6 @@
     </scenes>
     <resources>
         <image name="Background" width="1000" height="2000"/>
-        <image name="Checkmark" width="32" height="32"/>
+        <image name="Circle" width="32" height="32"/>
     </resources>
 </document>
