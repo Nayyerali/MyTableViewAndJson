@@ -10,8 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
  
-    var userDisease = [Disease]()
-    var searchDisease = [String]()
+    var Diseases = [Disease]()
+    
+    var searchDiseases = [Disease]()
+    
+    
     var SearchingDieases = false
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -29,9 +32,9 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if SearchingDieases {
-            return searchDisease.count
+            return searchDiseases.count
         } else {
-        return userDisease.count
+            return Diseases.count
         }
     }
      
@@ -39,19 +42,17 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiseaseTableViewCell") as! DiseaseTableViewCell
         if SearchingDieases {
-            cell.diseasesTextField.text = searchDisease[indexPath.row]
+            cell.diseasesTextField.text = searchDiseases[indexPath.row].disease
         } else {
-            cell.diseasesTextField.text = userDisease[indexPath.row].disease
-        
-        return cell
-            
+            cell.diseasesTextField.text = Diseases[indexPath.row].disease
         }
+        return cell
     }
     
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 60.0
         }
-    
+
     func downloadJson () {
         
         let url = URL(string: "https://raw.githubusercontent.com/Shivanshu-Gupta/web-scrapers/master/medical_ner/medicinenet-diseases.json")
@@ -59,11 +60,12 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             if error == nil {
                 do {
                 let abc = try JSONDecoder().decode([Disease].self, from: data!)
-                    self.diseaseTableView.reloadData()
+                   // self.diseaseTableView.reloadData()
                 for diseses in abc{
                     print(diseses.disease)
-                    self.userDisease.append(diseses)
+                    self.Diseases.append(diseses)
                 }
+                    
                     DispatchQueue.main.async {
                     self.diseaseTableView.reloadData()
                     }
@@ -73,14 +75,25 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             }
         }.resume()
     }
+
+
     
     // User input text
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // alphabetically search Disease
-        searchDisease = userDisease.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        searchDiseases = Diseases
+        searchDiseases = Diseases.filter({$0.disease.prefix(searchText.count) == searchText})
         SearchingDieases = true
         diseaseTableView.reloadData()
         }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.becomeFirstResponder()
+        SearchingDieases = false
+        searchBar.text = ""
+        diseaseTableView.reloadData()
     }
+}
 
